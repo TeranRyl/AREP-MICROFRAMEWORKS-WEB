@@ -103,6 +103,11 @@ NOTA 2
 
 El explorador pide y ejecuta lo que el servidor web le envie, y luego el servidor devuelve el resultado (paginas html, archivos css y js e imagenes jpg).
 Para esta conversion, se tiene en cuenta el encabezado del archivo y se devuelve en bytes. Este proceso varia segun el tipo de contenido.
+Main permite crear una aplicacion de backend, la cual estara en el servidor web, y funciona como servidor de aplicaciones (el cual permite alojar distintas aplicaciones web en el), en este caso las aplicaciones de prueba se encuentran en la carpeta "resources".
+Se hace uso del patron de diseño SINGLETON, para instanciar por unica vez "HttpServer".
+Se registran servicios web usando funciones lambda, utilizando formularios para invocarlos.
+Por protocolo, en el parametro se manda todo el Query, de tal manera que el programador se encarga de sacar los valores "hello?name=". Los parametros del query se pueden leer desde el programa.
+
 
 ## Construido con
 
