@@ -15,7 +15,7 @@ import java.util.Map;
 
 /** ESCUELA COLOMBIANA DE INGENIERIA - ARQUITECTURAS EMPRESARIALES
 
- Juan Francisco Teran Roman
+ @author Juan Francisco Teran Roman
  26/08/2023
 
  DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
@@ -173,6 +173,14 @@ public class HttpServer {
         serverSocket.close();
     }
 
+    /**
+     * Este método devuelve el contenido de un archivo especificado por su URL.
+     * El contenido se devuelve como una cadena en formato de respuesta HTTP.
+     *
+     * @param url la URL del archivo que se recuperará
+     * @return el contenido del archivo en formato de respuesta HTTP
+     * @throws IOException si ocurre un error de E/S
+     */
     public static String getFile(String url) throws IOException {
 
         String respuesta = null;
