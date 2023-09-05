@@ -1,4 +1,4 @@
-# DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
+# MICROFRAMEWORKS WEB
 
 Un servidor web que permite construir aplicaciones web de manera simple usando funciones lambda.
 
@@ -76,7 +76,7 @@ Finalmente, se agrega la instruccion para obtener el archivo en el metodo "main"
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/4720a670-bca7-4d22-a21d-fcf876f2ff0b)
 
-Este seria el resultado, buscando por la siguiente URI que abre el puerto 35001 y devuelve el archivo "terminos.html": http://localhost:35001/getFile?name=terminos.html
+Este seria el resultado, buscando por la siguiente URI que abre el puerto 35001 y devuelve el archivo "terminos.html": http://localhost:35001/getFile?name=terminos.html desde Windows.
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/e35b614d-8bad-4a96-a5ea-bf0eae784873)
 
