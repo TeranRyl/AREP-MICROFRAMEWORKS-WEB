@@ -1,6 +1,6 @@
 # DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
 
-Un servidor web que lee los archivos del disco local y retorna todos los archivos solicitados, incluyendo páginas html, archivos java script, css e imágenes. Se construyo una aplicación web con javascript, css, e imágenes para probar el servidor.
+Un servidor web que permite construir aplicaciones web de manera siimple usando funciones lambda.
 
 ## Instrucciones para ejecutar
 
@@ -23,7 +23,6 @@ Para descargar la aplicacion, ya estando aqui, se necesita un equipo de computo 
 
 - (RECOMENDACION) Tener todo actualizado
 ```
-Esta guia no incluye tutoria para la descarga e instalacion de los anteriores mencionados. Si no cuenta con algo, o no sabe, le recomiendo ver algun video en Youtube.
 
 ### Instalando
 
@@ -36,29 +35,26 @@ Paso a paso
 
 3. Abrir el Shell de su preferencia.
 
-4. Desde el Shell, muevase a la ubicacion donde extrajo el archivo .ZIP (Deberia estar dentro de la carpeta llamada  "ARQUITECTURAS-EMPRESARIALES-TALLER-2-master").
+4. Desde el Shell, muevase a la ubicacion donde extrajo el archivo .ZIP (Deberia estar dentro de la carpeta llamada  "ARQUITECTURAS-EMPRESARIALES-TALLER-3-master").
 
 5. Desde el Shell, escriba "mvn package" (este comando compila, construye y empaqueta el proyecto en un .JAR).
 
-6. Desde el Shell, escriba "java -cp target/Taller2-1.0-SNAPSHOT.jar edu.escuelaing.app.App" para ejecutar la aplicacion.
+6. Desde el Shell, escriba "java -cp target/Taller3-1.0-SNAPSHOT.jar edu.escuelaing.app.MySparkApp" para ejecutar la aplicacion.
    Deberia ver un mensaje diciendo "Listo para recibir... ".
 
 7. Abra su explorador web de preferencia y busque en una pestaña incognita lo siguiente:
    
-   - "localhost:35001/web/terminos.html" (SIN LAS COMILLAS) - Pagina html con ruta "src/main/resources/terminos.html"
-   - "localhost:35001/web/style.css" (SIN LAS COMILLAS) - Archivo css con ruta "src/main/resources/style.css"
-   - "localhost:35001/web/app.js" (SIN LAS COMILLAS) - Archivo javascript con ruta "src/main/resources/app.js"
-   - "localhost:35001/web/risas.jpg" (SIN LAS COMILLAS) - Imagen jpg con ruta "src/main/resources/risas.jpg"
+   - "localhost:35001/getFile?name=terminos.html" (SIN LAS COMILLAS) - Pagina html con ruta "src/main/resources/terminos.html".
+   - "localhost:35001/getFile?name=style.css" (SIN LAS COMILLAS) - Archivo css con ruta "src/main/resources/style.css".
+   - "localhost:35001/getFile?name=app.js" (SIN LAS COMILLAS) - Archivo javascript con ruta "src/main/resources/app.js".
+   - "localhost:35001/web/index.html" (SIN LAS COMILLAS) - Aplicacion con varios tipos de archivos 
+      incluidos.
+   - "localhost:35001/getFile?name=risas.jpg" (SIN LAS COMILLAS) - Imagen jpg con ruta "src/main/resources/risas.jpg".
 
-8. Buscando "localhost:35001/web/index.html" (SIN LAS COMILLAS) o "localhost:35001/web/*CUALQUIERTEXTO_O_VACIO*" (SIN LAS COMILLAS Y ASTERISCOS) tendra acceso a una aplicacion que incluye archivos html, css, js y jpg.
-
-9. Esta aplicacion web incluye comunicacion asincrona con servicios REST. Para probar esto, debe introducir cualquier cadena en el campo de texto y posteriormente debe pulsar sobre el boton "Submit" para enviar la 
-   solicitud HTTP y traer el contenido de "terminos.html". En pantalla podra ver, adicional al "index.html", la pagina "terminos.html" cargada.
+   - "localhost:35001/hello?name=Juan" (SIN LAS COMILLAS) - Servicio web que retorna "Hello" + *el       parametro que se pase tras el parametro "name".
 
 NOTA: Para abortar el shell con el servidor encendido, podemos presionar "CTRL" + "C".
 ```
-
-Puede enviar cuantas cadenas de texto quiera.
 
 Una vez haya terminado, puede cerrar el servidor introduciendo, desde el cliente, la URL "localhost:35001/web/salir.exe" (SIN LAS COMILLAS) y el servidor se apagara enseguida.
 
@@ -66,32 +62,29 @@ Una vez haya terminado, puede cerrar el servidor introduciendo, desde el cliente
 
 ## Evaluacion
 
-Pruebas realizadas:
+Ejemplo de desarrollo de aplicaciones en el servidor:
 
-Pagina html:
+Inicialmente, el programador desea leer el contenido de su archivo "terminos.html", entonces lo sube a la carpeta "src/main/resources/".
 
-![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/6b1a1a69-8311-4a3a-8654-b79308d9b7e3)
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/7edb899c-07a5-4bc8-805b-92152a15621e)
 
-Archivo css:
+Posteriormente, agrega el codigo necesario para entregar archivo HTML.
 
-![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/d34736bb-5466-4c1a-a25b-07e66c504aca)
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/b729f503-c25d-4989-ae04-e2fc3f89d0b5)
 
-Archivo js:
+Finalmente, se agrega la instruccion para obtener el archivo en el metodo "main" del proyecto, de la siguiente manera para activar el servicio:
 
-![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/a3375cbe-5fa5-4f72-91b8-bd058b15f50d)
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/4720a670-bca7-4d22-a21d-fcf876f2ff0b)
 
-Imagen jpg:
+Este seria el resultado, buscando por la siguiente URI que abre el puerto 35001 y devuelve el archivo "terminos.html": http://localhost:35001/getFile?name=terminos.html
 
-![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/3707c7ce-7e54-44cc-b36f-3d4cf5253f5c)
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/e35b614d-8bad-4a96-a5ea-bf0eae784873)
 
-Aplicacion web:
 
-![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/db1946ba-c6d6-4200-9ce9-3b7ed8ebd924)
-![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/3334d16c-9cfc-4428-b5f4-d297a9c0b8c4)
 
-Pagina erronea:
 
-![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/a3080618-9267-4967-bb52-1fa9dcf81ba5)
+
+
 
 
 
