@@ -1,6 +1,6 @@
-# DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
+# MICROFRAMEWORKS WEB
 
-Un servidor web que permite construir aplicaciones web de manera siimple usando funciones lambda.
+Un servidor web que permite construir aplicaciones web de manera simple usando funciones lambda.
 
 ## Instrucciones para ejecutar
 
@@ -76,7 +76,7 @@ Finalmente, se agrega la instruccion para obtener el archivo en el metodo "main"
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/4720a670-bca7-4d22-a21d-fcf876f2ff0b)
 
-Este seria el resultado, buscando por la siguiente URI que abre el puerto 35001 y devuelve el archivo "terminos.html": http://localhost:35001/getFile?name=terminos.html
+Este seria el resultado, buscando por la siguiente URI que abre el puerto 35001 y devuelve el archivo "terminos.html": http://localhost:35001/getFile?name=terminos.html desde Windows.
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-3/assets/81679109/e35b614d-8bad-4a96-a5ea-bf0eae784873)
 
@@ -103,6 +103,11 @@ NOTA 2
 
 El explorador pide y ejecuta lo que el servidor web le envie, y luego el servidor devuelve el resultado (paginas html, archivos css y js e imagenes jpg).
 Para esta conversion, se tiene en cuenta el encabezado del archivo y se devuelve en bytes. Este proceso varia segun el tipo de contenido.
+Main permite crear una aplicacion de backend, la cual estara en el servidor web, y funciona como servidor de aplicaciones (el cual permite alojar distintas aplicaciones web en el), en este caso las aplicaciones de prueba se encuentran en la carpeta "resources".
+Se hace uso del patron de diseño SINGLETON, para instanciar por unica vez "HttpServer".
+Se registran servicios web usando funciones lambda, utilizando formularios para invocarlos.
+Por protocolo, en el parametro se manda todo el Query, de tal manera que el programador se encarga de sacar los valores "hello?name=". Los parametros del query se pueden leer desde el programa.
+
 
 ## Construido con
 
