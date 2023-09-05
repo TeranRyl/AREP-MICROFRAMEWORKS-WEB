@@ -1,6 +1,6 @@
 # DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
 
-Un servidor web que permite construir aplicaciones web de manera siimple usando funciones lambda.
+Un servidor web que permite construir aplicaciones web de manera simple usando funciones lambda.
 
 ## Instrucciones para ejecutar
 
